@@ -15,7 +15,7 @@ if __name__ == "__main__":
     for it in os.scandir(img_dir):
         if it.is_dir():
             img_subdirs.append(it.name)
-    images = [img for img in os.listdir(img_dir) if img.endswith('.png') or img.endswith('.jpg') or img.endswith('.jpeg') or img.endswith('.mp4') or img.endswith('.svg')]
+    images = [img for img in os.listdir(img_dir) if img.lower().endswith(('.png', '.jpg', '.jpeg', '.mp4', '.svg'))]
     img_urls = ["https://github.com/realzza/blog-images/blob/main/%s/%s?raw=true"%(img_dir, img) for img in images]
     if img_subdirs:
         for idir in img_subdirs:
